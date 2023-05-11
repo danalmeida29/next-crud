@@ -16,7 +16,6 @@ export default function Formulario(props: FormularioProps){
     const [nome, setNome] = useState(props.cliente?.nome ?? '')
     const [idade, setIdade] = useState(props.cliente?.idade ?? 0)
     const [email, setEmail] = useState(props.cliente?.email ?? '')
-    const [password, setPassword] = useState(props.cliente?.password ?? '')
 
     return(
         <div className="bg-gray-200 p-5 rounded-xl">
@@ -48,14 +47,9 @@ export default function Formulario(props: FormularioProps){
                 valor={email}
                 valorMudou={setEmail}
             />
-
-            <Entrada 
-                text="Senha" 
-                valor={password}
-            />
             <div className="flex justify-end mt-7">
                 <Botao cor="blue" 
-                    onClick={() => props.clienteMudou?.(new Cliente(nome, +idade, email, password, id)) }
+                    onClick={() => props.clienteMudou?.(new Cliente(nome, +idade, email, id)) }
                     className="mr-2 bg-gradient-to-r from-blue-500 to-blue-700">
                     {id ? 'Alterar' : 'Salvar' }
                 </Botao>

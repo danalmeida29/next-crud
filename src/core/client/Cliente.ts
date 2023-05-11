@@ -3,19 +3,16 @@ export default class Cliente {
     #nome: string;
     #idade: number;
     #email: string;
-    #password: string;
 
     constructor(
         nome: string, 
         idade: number, 
         email: string,
-        password: string,
         id: string = null
     ){
         this.#nome = nome
         this.#idade = idade
         this.#email = email
-        this.#password = password
         this.#id = id
     }
 
@@ -34,8 +31,5 @@ export default class Cliente {
     }
     get email(){
         return this.#email
-    }
-    get password(){
-        return this.#password
     }
 }
